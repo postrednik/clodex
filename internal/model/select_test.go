@@ -461,7 +461,7 @@ func TestResolveAstra(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if got.CanonicalID() != "gpt-6-astra:medium" || got.ServiceTier != "" {
+	if got.CanonicalID() != "gpt-6-astra:low" || got.ServiceTier != "" {
 		t.Fatalf("default selection = %+v", got)
 	}
 	if _, err := Resolve(cat, "gpt-6-astra:none", "gpt-6-astra", 0); err == nil {

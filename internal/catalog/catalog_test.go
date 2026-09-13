@@ -47,7 +47,7 @@ func TestLoadFallbackExactCatalog(t *testing.T) {
 		serviceDescription, defaultService                    string
 	}
 	want := []wantModel{
-		{"gpt-6-astra", "GPT-6-Astra", "Our most capable model for complex, demanding work.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 1, 872000, true, true, "2x speed, increased usage", ""},
+		{"gpt-6-astra", "GPT-6-Astra", "Our most capable model for complex, demanding work.", "low", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 1, 872000, true, true, "2x speed, increased usage", "priority"},
 		{"gpt-reserve", "GPT-Reserve", "Fast and affordable agentic coding model.", "medium", "hide", []string{"low", "medium", "high", "xhigh", "max"}, 3, 272000, true, true, "1.5x speed, increased usage", "priority"},
 		{"gpt-5.6-sol", "GPT-5.6-Sol", "Reliable agentic workhorse for everyday tasks.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 6, 272000, true, true, "1.5x speed, increased usage", "priority"},
 		{"gpt-5.6-terra", "GPT-5.6-Terra", "Balanced agentic coding model for everyday work.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 7, 272000, true, true, "1.5x speed, increased usage", "priority"},

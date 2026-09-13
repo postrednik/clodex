@@ -6,7 +6,7 @@
       "slug": "gpt-6-astra",
       "display_name": "GPT-6-Astra",
       "description": "Our most capable model for complex, demanding work.",
-      "default_reasoning_level": "medium",
+      "default_reasoning_level": "low",
       "supported_reasoning_levels": [
         {
           "effort": "low",
@@ -45,7 +45,7 @@
           "description": "2x speed, increased usage"
         }
       ],
-      "default_service_tier": null,
+      "default_service_tier": "priority",
       "supports_parallel_tool_calls": true,
       "supports_image_detail_original": true,
       "input_modalities": [

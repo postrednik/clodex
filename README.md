@@ -160,12 +160,14 @@ only: to move the launcher off `8484`, set `CLODEX_PORT`.
 
 The grammar is `slug[:effort][:fast]`. Effort runs weakest to strongest: `low`, `medium`, `high`,
 `xhigh`, `max`, `ultra` — support is **not** uniform across models. `:fast` requests the fast speed
-tier where the model advertises one, and must be the final suffix. The live catalog is authoritative
-at runtime; below is the compiled offline fallback used when discovery is unavailable.
+tier where the model advertises one, and must be the final suffix. `ultra` is a client-side tier in
+the Codex CLI: the backend rejects `reasoning.effort: "ultra"`, so Clodex sends `max` for it and does
+not reproduce the CLI's multi-agent delegation. The live catalog is authoritative at runtime; below
+is the compiled offline fallback used when discovery is unavailable.
 
 | Slug | Default effort | Supported efforts | `:fast` |
 | --- | --- | --- | --- |
-| `gpt-6-astra` | `medium` | low, medium, high, xhigh, max, ultra | yes |
+| `gpt-6-astra` | `low` | low, medium, high, xhigh, max, ultra | yes |
 | `gpt-5.6-sol` | `medium` | low, medium, high, xhigh, max, ultra | yes |
 | `gpt-5.6-terra` | `medium` | low, medium, high, xhigh, max, ultra | yes |
 | `gpt-5.6-luna` | `medium` | low, medium, high, xhigh, max | yes |
@@ -177,9 +179,11 @@ Every fallback model advertises a 272,000-token context window. Astra also adver
 a maximum context window of 872,000 tokens; selecting it does not expand the active window.
 
 Run Astra with `clodex claude --model gpt-6-astra` or select an explicit effort,
-for example `clodex claude --model gpt-6-astra:high:fast`. The fallback capabilities
-come from the Codex subscription catalog, which can differ from the public API.
-See [Astra verification](docs/ASTRA.md) for provenance and repeatable tests.
+for example `clodex claude --model gpt-6-astra:high:fast`. Astra defaults to `low`
+effort upstream, so name the effort you want. The fallback capabilities come from
+the Codex subscription catalog, which can differ from the public API.
+See [Astra verification](docs/ASTRA.md) for provenance, capability coverage, and
+repeatable tests.
 
 `gpt-reserve` and
 `codex-auto-review` are marked `visibility: hide` upstream; Clodex does not filter on that field,
