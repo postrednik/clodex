@@ -74,6 +74,10 @@ Local validation passed:
 - `go test -race -count=1 ./...` (31 packages; live suites skipped by default)
 - `go mod verify`
 - Static builds for darwin, linux, and windows, on amd64 and arm64
+- The same vet/build/race gate under the CI-pinned `GOTOOLCHAIN=go1.26.5`
+- `govulncheck` clean on the current toolchain. Under the 1.26.5 pin it reports
+  five standard-library findings fixed in Go 1.26.6; they are identical on `main`
+  and are a property of the pin, not of this change.
 
 Live checks through a running proxy on the 0.154.0 pin:
 
@@ -102,5 +106,5 @@ reusing an older binary. The test uses a temporary marker file and only the Read
 tool. It requires no private image fixture. Account availability can change;
 Astra-specific live checks deliberately remain opt-in.
 
-Native Windows/Linux execution, the CI-pinned Go 1.26.5 toolchain, and Astra
-long-context behavior above 272,000 tokens were not tested locally.
+Native Windows and Linux execution and Astra long-context behavior above
+272,000 tokens were not tested locally; the workflow covers the native runners.
