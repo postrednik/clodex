@@ -51,6 +51,8 @@ Three limits are real and shared with the other models:
   reproduce the CLI's multi-agent delegation (`multi_agent_version: v2`).
 - `max_context_window: 872000` is recorded but unused; the active window stays
   `context_window` (272,000) at the schema's 95 percent, as with every model.
+  The same refresh corrected the sibling entries, which still carried the
+  0.144.6-era `max_context_window: 272000` and a stale `gpt-5.6-sol` priority.
 - `support_verbosity`/`default_verbosity: low` are not sent; requests use the
   backend default rather than pinning Codex's verbosity.
 

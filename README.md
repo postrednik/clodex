@@ -175,8 +175,9 @@ is the compiled offline fallback used when discovery is unavailable.
 | `gpt-reserve` | `medium` | low, medium, high, xhigh, max | yes |
 | `codex-auto-review` | `medium` | low, medium, high, xhigh, max | yes |
 
-Every fallback model advertises a 272,000-token context window. Astra also advertises
-a maximum context window of 872,000 tokens; selecting it does not expand the active window.
+Every fallback model advertises a 272,000-token active context window. All of them except
+`gpt-5.5` also advertise an 872,000-token maximum context window upstream; Clodex records that
+field but does not use it, so no model selection expands the active window.
 
 Run Astra with `clodex claude --model gpt-6-astra` or select an explicit effort,
 for example `clodex claude --model gpt-6-astra:high:fast`. Astra defaults to `low`

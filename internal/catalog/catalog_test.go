@@ -48,12 +48,12 @@ func TestLoadFallbackExactCatalog(t *testing.T) {
 	}
 	want := []wantModel{
 		{"gpt-6-astra", "GPT-6-Astra", "Our most capable model for complex, demanding work.", "low", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 1, 872000, true, true, "2x speed, increased usage", "priority"},
-		{"gpt-reserve", "GPT-Reserve", "Fast and affordable agentic coding model.", "medium", "hide", []string{"low", "medium", "high", "xhigh", "max"}, 3, 272000, true, true, "1.5x speed, increased usage", "priority"},
-		{"gpt-5.6-sol", "GPT-5.6-Sol", "Reliable agentic workhorse for everyday tasks.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 6, 272000, true, true, "1.5x speed, increased usage", "priority"},
-		{"gpt-5.6-terra", "GPT-5.6-Terra", "Balanced agentic coding model for everyday work.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 7, 272000, true, true, "1.5x speed, increased usage", "priority"},
-		{"gpt-5.6-luna", "GPT-5.6-Luna", "Fast and affordable agentic coding model.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max"}, 8, 272000, true, true, "1.5x speed, increased usage", "priority"},
+		{"gpt-reserve", "GPT-Reserve", "Fast and affordable agentic coding model.", "medium", "hide", []string{"low", "medium", "high", "xhigh", "max"}, 3, 872000, true, true, "1.5x speed, increased usage", "priority"},
+		{"gpt-5.6-sol", "GPT-5.6-Sol", "Reliable agentic workhorse for everyday tasks.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 4, 872000, true, true, "1.5x speed, increased usage", "priority"},
+		{"gpt-5.6-terra", "GPT-5.6-Terra", "Balanced agentic coding model for everyday work.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max", "ultra"}, 7, 872000, true, true, "1.5x speed, increased usage", "priority"},
+		{"gpt-5.6-luna", "GPT-5.6-Luna", "Fast and affordable agentic coding model.", "medium", "list", []string{"low", "medium", "high", "xhigh", "max"}, 8, 872000, true, true, "1.5x speed, increased usage", "priority"},
 		{"gpt-5.5", "GPT-5.5", "Proven previous-generation model for coding and general work.", "xhigh", "list", []string{"low", "medium", "high", "xhigh"}, 12, 272000, true, false, "1.5x speed, increased usage", "priority"},
-		{"codex-auto-review", "Codex Auto Review", "Automatic approval review model for Codex.", "medium", "hide", []string{"low", "medium", "high", "xhigh", "max"}, 43, 272000, true, true, "1.5x speed, increased usage", "priority"},
+		{"codex-auto-review", "Codex Auto Review", "Automatic approval review model for Codex.", "medium", "hide", []string{"low", "medium", "high", "xhigh", "max"}, 43, 872000, true, true, "1.5x speed, increased usage", "priority"},
 	}
 	if len(c.Models) != len(want) {
 		t.Fatalf("len(Models) = %d, want %d", len(c.Models), len(want))
